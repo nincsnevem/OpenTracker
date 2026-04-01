@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/svg/opentracker.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Tracker</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="top-bar">
+        <h1>Open Tracker</h1>
+      </header>
+
+      <main>
+        <section class="inputs">
+          <div class="form-grid">
+            <label for="meal-type">Meal Type</label>
+            <label for="meal-name">Meal Name</label>
+            <label for="meal-calories">Calories</label>
+
+            <select class="input" name="meal-type" id="meal-type">
+              <option value="" disabled selected>Select</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="snack">Snack</option>
+              
+            </select>
+            <input class="input" type="text" name="meal-name" id="meal-name" placeholder="Meal">
+
+            <div class="input-wrapper">
+              <input class="input" type="number" name="meal-calories" id="meal-calories"  inputmode="decimal"  placeholder="0">
+            <span class="units">kcal</span>
+            </div>  
+          </div>  
+          <div class="button-warpper">
+            <button type="submit" id="add-meal">Add Meal</button>
+          </div>
+        </section>
+
+        <section class="stats">
+          <h2 id="calorie-counter">Calories consumed today: 0 kcal</h2>
+          <button id="reset-button">Reset</button>
+          <h3>Meals eaten today:</h3>
+          <ul id="meals-list" class="meals">
+          </ul>
+        </section>
+        
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/get-stats.js"></script>
+  </body>
+</html>
