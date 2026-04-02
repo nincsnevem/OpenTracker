@@ -37,7 +37,9 @@ input[type=number] {
 
 
 
-
+html {
+  scrollbar-gutter: stable;
+}
 body{
   background: var(--bg-color);
   color: var(--font-color);
@@ -45,6 +47,13 @@ body{
   user-select: none;
 }
 
+#app{
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  margin: 0 auto;
+  justify-content: center;
+}
 
 h1{
   margin: 0;
@@ -96,16 +105,32 @@ option:disabled{
 .form-grid{
   display: grid;
   width: min(90vw,25rem);
-  grid-template-columns: 1fr 1fr 4rem;
-  column-gap: 0.5rem;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 0;
+  row-gap: 0.5rem; 
+  padding: 0;
+  margin-left: -10%;
 }
 
-.inputs{
+.grid-wrapper{
+  width: 100vw;
   display: flex;
   justify-content: center;
 }
 
+
+
+
+
+.inputs{
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+
 .input{
+
   font-family: inherit;
   background: var(--bg-color);
   border-color: var(--font-color);
@@ -115,10 +140,13 @@ option:disabled{
   border-style: solid;
   text-indent: 8px;
   text-justify: center;
-  padding-top: 3px;
-  padding-bottom: 2px;
+  width: 40%;
 
 
+}
+
+#meal-name{
+  width: auto;
 }
 
 
@@ -153,6 +181,10 @@ ul{
   margin: 0;
   padding: 0;
   
+  
+}
+li{
+  margin-left: 1rem;
 }
 
 .delete-meal{
