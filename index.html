@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/OpenTracker/assets/opentracker-BuAKMHQN.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Open Tracker</title>
-    <script type="module" crossorigin src="/OpenTracker/assets/index-DN5XJ4tZ.js"></script>
-    <link rel="stylesheet" crossorigin href="/OpenTracker/assets/index-9bwTJ_uU.css">
+    <script type="module" crossorigin src="/OpenTracker/assets/index-BPRB9WEU.js"></script>
+    <link rel="stylesheet" crossorigin href="/OpenTracker/assets/index-CdoTFMVv.css">
   </head>
   <body>
     <div id="app">
@@ -16,29 +16,37 @@
 
       <main>
         <section class="inputs">
-          <div class="form-grid">
-            <label for="meal-type">Meal Type</label>
-            <label for="meal-name">Meal Name</label>
-            <label for="meal-calories">Calories</label>
-
-            <select class="input" name="meal-type" id="meal-type">
-              <option value="" disabled selected>Select</option>
-              <option value="breakfast">Breakfast</option>
-              <option value="lunch">Lunch</option>
-              <option value="dinner">Dinner</option>
-              <option value="snack">Snack</option>
+          <div class="grid-wrapper">
+              <div class="form-grid">
+                <div class="label-wrapper">
+                  <label for="meal-type">Meal Type</label>
+                  <select class="input" name="meal-type" id="meal-type">
               
-            </select>
-            <input class="input" type="text" name="meal-name" id="meal-name" placeholder="Meal">
+                    <option value="" disabled selected>Select</option>
+                    <option value="breakfast">Breakfast</option>
+                    <option value="lunch">Lunch</option>
+                    <option value="dinner">Dinner</option>
+                    <option value="snack">Snack</option>
+                  </select> 
+                </div>
 
-            <div class="input-wrapper">
-              <input class="input" type="number" name="meal-calories" id="meal-calories"  inputmode="decimal"  placeholder="0">
-            <span class="units">kcal</span>
-            </div>  
-          </div>  
-          <div class="button-warpper">
-            <button type="submit" id="add-meal">Add Meal</button>
+                <div class="label-wrapper">
+                  <label for="meal-name">Meal Name</label>
+              <input class="input" type="text" name="meal-name" id="meal-name" placeholder="Meal">
+                </div>
+
+                <div class="label-wrapper">
+                  <label for="meal-calories">Calories</label>
+                  <div class="input-wrapper">
+                    <input class="input" type="number" name="meal-calories" id="meal-calories"  inputmode="decimal"  placeholder="0">
+                    <span class="units">kcal</span>
+                  </div>
+                </div>
+
+            </div>
           </div>
+
+          <button type="submit" id="add-meal">Add Meal</button>
         </section>
 
         <section class="stats">
