@@ -103,19 +103,25 @@ option:disabled{
 
 
 .form-grid{
-  display: grid;
-  width: min(90vw,25rem);
-  grid-template-columns: 1fr 2fr;
-  column-gap: 0;
-  row-gap: 0.5rem; 
-  padding: 0;
-  margin-left: -10%;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+}
+
+.label-wrapper{
+  width: 20rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
 }
 
 .grid-wrapper{
-  width: 100vw;
-  display: flex;
-  justify-content: center;
+  width: 90vw;
+  justify-items: center;
 }
 
 
@@ -140,13 +146,7 @@ option:disabled{
   border-style: solid;
   text-indent: 8px;
   text-justify: center;
-  width: 40%;
-
-
-}
-
-#meal-name{
-  width: auto;
+  width:  50%;
 }
 
 
