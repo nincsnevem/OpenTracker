@@ -47,6 +47,7 @@ body{
   user-select: none;
 }
 
+
 #app{
   display: flex;
   flex-direction: column;
@@ -57,7 +58,7 @@ body{
 
 h1{
   margin: 0;
-  font-size: clamp(2rem,6vw,4rem); 
+  font-size: clamp(2rem,6vw,5rem); 
   font-family: 'Racing-sans', sans-serif;
 }
 
@@ -71,7 +72,7 @@ button{
   margin-top: 0.1rem;
   border-width: var(--border-width);
   transition: all 0.1s ease;
-  font-size: larger;
+  font-size: 1.7rem;
 }
 
 button:hover{
@@ -86,7 +87,7 @@ section{
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 3rem;
+  margin-top: clamp(1rem,5vh,4rem);
 }
 
 option:disabled{
@@ -103,35 +104,32 @@ option:disabled{
 
 
 .form-grid{
-  width: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  width:  70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 6rem 0.1rem 10rem 3rem);
   justify-content: center;
-  gap: 1rem;
-
+  column-gap: 0;
+  row-gap: 0.5rem;
+  margin-left: 10%;
 }
 
-.label-wrapper{
-  width: 20rem;
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  
+.badge{
+  border-style: dashed;
+  border-radius: 4rem;
+  border-width: var(--border-width);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1rem;
 }
-
-.grid-wrapper{
-  width: 90vw;
-  justify-items: center;
-}
-
 
 
 
 
 .inputs{
-  width: fit-content;
   display: flex;
   justify-content: center;
+  align-items: center;
   overflow: visible;
 }
 
@@ -146,7 +144,6 @@ option:disabled{
   border-style: solid;
   text-indent: 8px;
   text-justify: center;
-  width:  50%;
 }
 
 
@@ -163,6 +160,11 @@ outline: 0.2rem solid var(--font-color);
 
 .input-wrapper{
   display: flex;
+}
+
+.input-wrapper > input{
+  justify-self: start;
+  width: 2rem;
 }
 
 .units{

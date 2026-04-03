@@ -16,53 +16,53 @@ resetButton.addEventListener("click", () => resetItems());
 
 const storedData = JSON.parse(localStorage.getItem('mySavedMeals'));
 
-let caloriesVar = 0;
+let consumed = {
+  kcal: 0,
+  carbs: 0,
+  fats: 0,
+  protein: 0
+}
 
 let mealsArray = []
 
-function sumCalories(){
+function collectStats(){
   const stats = getStats();
-  
-  if(stats == null){
+  if(stats === null){
     alert("Fill out the stats!!!");
     return
   }
-  
-
   mealsArray.push(stats);
-  
 }
 
 function displayCalories(){
-  
-  
   mealsList.innerHTML = "";
-  caloriesVar = 0;
+  consumed = {kcal: 0,carbs: 0,fats: 0,protein: 0}
   for( let i = 0; i < mealsArray.length; i++){
-    const type = mealsArray[i][1].charAt(0).toUpperCase() + mealsArray[i][1].slice(1);
-    const name = mealsArray[i][2];
-    const kcal = mealsArray[i][3];
-    caloriesVar += mealsArray[i][3];
+    const type = mealsArray[i].type;
+    const name = mealsArray[i].name;
+    const kcal = mealsArray[i].kcal;
+    addToConsumed(mealsArray[i]);
+
     mealsList.insertAdjacentHTML('beforeend', `<li>${type} : ${name} [${kcal} kcal] <button class="delete-meal" data-row="${i}">✖</button></li>`);  
   }
-  calorieCounter.textContent = `Calories consumed today: ${caloriesVar} kcal`;
-
+  calorieCounter.innerHTML = `
+  <span class="badge">Energy:&nbsp${consumed.kcal}kcal</span>  
+  <span class="badge">Protein:&nbsp${consumed.protein}g</span>
+  <span class="badge">Carbs:&nbsp${consumed.carbs}g</span>
+  <span class="badge">Fat:&nbsp${consumed.fats}g</span>`;
 }
 function deleteItem(row){
   loadData();
-
-  console.log("delete");
   if(mealsArray[row]){
     mealsArray.splice(row, 1);
   }
   displayCalories();
-
   saveData();
 }
 
 function addItem(){
   loadData();
-  sumCalories();
+  collectStats();
   displayCalories();
   saveData();
 }
@@ -93,6 +93,14 @@ function resetItems(){
   localStorage.setItem('mySavedMeals', JSON.stringify(mealsArray));   
   displayCalories();
 
+}
+
+function addToConsumed(dict){
+  Object.entries(dict).forEach(([key, value]) =>{
+    if (typeof value === "number" && key in consumed){
+      consumed[key] += dict[key];
+    }
+  })
 }
 
 loadData();
