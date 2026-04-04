@@ -288,7 +288,7 @@ li{
   backdrop-filter: blur(10px);
   color: var(--font-color);
   padding: 1rem;
-  padding-left: 2rem;
+  padding-left: 1rem;
   border-radius: 2rem;
   position: absolute;
 }
@@ -299,18 +299,25 @@ li{
   row-gap: 2rem;
 }
 
+.button-container{
+
+  overflow: hidden;
+}
+
 #add-meal-menu-button{
-  width: 11rem;
+  width: fit-content;
   border-radius: 5rem 1rem 1rem 5rem;
   justify-items: right;
   padding-right: 0.5rem;
+  font-size: x-large;
 }
 
 #add-activity-menu-button{
-  width: 11rem;
+  width:  fit-content;
   border-radius: 1rem 5rem 5rem 1rem;
   justify-items: left;
   padding-left: 0.5rem;
+  font-size: x-large;
 }
 
 #add-meal{
