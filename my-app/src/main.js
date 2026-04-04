@@ -71,7 +71,7 @@ function displayCalories(){
     addToConsumed(mealsArray[i]);
     
 
-    mealsList.insertAdjacentHTML('beforeend', `<li>${type} : ${name} [${kcal} kcal] <button class="delete-meal X" data-row="${i}">✖</button></li>`);
+    mealsList.insertAdjacentHTML('beforeend', `<li><button class="delete-meal X" data-row="${i}">✖</button>${type} : ${name} [${kcal} kcal] </li>`);
     
   }
 
@@ -79,7 +79,7 @@ function displayCalories(){
     const name = activityArray[i].name;
     const kcal = activityArray[i].kcal;
     addToBurned(activityArray[i]);
-    activityList.insertAdjacentHTML('beforeend',`<li>${name} [${kcal} kcal] <button class="delete-activity X" data-row="${i}">✖</button></li>`) ;
+    activityList.insertAdjacentHTML('beforeend',`<li><button class="delete-activity X" data-row="${i}">✖</button> ${name} [${kcal} kcal]`) ;
   }
 
   eatenCalsText.innerText = consumed.kcal;
