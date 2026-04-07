@@ -13,12 +13,11 @@
          </header>
          <main>
             <section class="stats">
-               <h2>Energy:</h2>
                <div class="energy-grid">
                   <div class="circle" id="eaten-cals">0</div>
-                  <div class="big-circle" >
+                  <div class="big-circle" id="calorie-circle">
                      <div class="mask-circle">
-                        <h2 id="total-cals">0</h2>
+                        <h1 id="total-cals">0</h1>
                         <p>kcal</p>
                      </div>    
                   </div>
@@ -28,12 +27,14 @@
                   <p class="stat-text">Burned</p>
                </div>
                <div id="calorie-counter"></div>
-            </section>
-            <section class="inputs">
+
                <div class="button-container">
                   <button popovertarget="add-meal-menu" id="add-meal-menu-button"><div>Meal</div></button>
                   <button popovertarget="add-activity-menu" id="add-activity-menu-button"><div>Activity</div></button>
                </div>
+            </section>
+            <section class="inputs">
+               
 
                <div id="ancor"></div>
 
@@ -114,17 +115,16 @@
                </div>  
 
             </section>
-            <section class="listed-meals">
+            <section class="listed-items">
                <button id="reset-button">Reset</button>
                <h3>🍔Meals eaten today:</h3>
                <ul id="meals-list" class="meals">
                </ul>
-            </section>
-            <section class="listed-activities">
+
                <h3>🏃‍♂️Todays activities:</h3>
                <ul id="activity-list" class="meals">
                </ul>
-            </section>
+            </section>  
          </main>
       </div>
       <script type="module" src="/src/main.js"></script>

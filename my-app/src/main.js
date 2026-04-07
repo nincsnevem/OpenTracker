@@ -1,11 +1,11 @@
 import './style.css'
 import {getCardio, getStats} from './js/get-stats.js'
 
-
+const calorieTarget = 2500
 
 const calorieCounter = document.getElementById("calorie-counter");
 const mealsList = document.getElementById("meals-list");
-const activityList = document.getElementById("activity-list")
+const activityList = document.getElementById("activity-list");
 const addButton = document.getElementById("add-meal");
 const addActivityButton = document.getElementById("add-activity");
 const resetButton = document.getElementById("reset-button");
@@ -13,6 +13,8 @@ const resetButton = document.getElementById("reset-button");
 const totalCalsText = document.getElementById("total-cals");
 const eatenCalsText = document.getElementById("eaten-cals");
 const burnedCalsText = document.getElementById("burned-cals");
+const calorieCircle = document.getElementById("calorie-circle");
+
 
 addButton.addEventListener("click", (event) => addItem(event));
 addActivityButton.addEventListener("click", (event) => addActivity(event));
@@ -85,6 +87,8 @@ function displayCalories(){
   eatenCalsText.innerText = consumed.kcal;
   burnedCalsText.innerText = burned.kcal;
   totalCalsText.innerText = consumed.kcal - burned.kcal;
+  const caloriePercent = (consumed.kcal - burned.kcal) / calorieTarget;
+  calorieCircle.style.setProperty('--circle-percentage', `${caloriePercent * 100}%`);
   calorieCounter.innerHTML = `
   <span class="badge">Protein:&nbsp${consumed.protein}g</span>
   <span class="badge">Carbs:&nbsp${consumed.carbs}g</span>
